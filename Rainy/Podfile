@@ -1,0 +1,5 @@
+use_frameworks!
+target ‘Rainy’ do
+	pod 'SwiftyJSON'
+	pod 'Alamofire', '~> 4.0'
+end
