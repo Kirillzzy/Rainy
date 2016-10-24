@@ -10,7 +10,7 @@
         <!--Here-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Here" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Rainy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Here" id="9pv-A4-QxB" customClass="CurrentWeatherViewController" customModule="Rainy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saint-Petersburg is good" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKI-Q6-7WE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At [Time]:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKI-Q6-7WE">
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,9 +35,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wM-x4-z53">
-                                <frame key="frameInset" minX="164" minY="580" width="47" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wM-x4-z53">
                                 <state key="normal" title="Reload"/>
+                                <connections>
+                                    <action selector="reloadButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="GBn-8P-6iv"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lkQ-3f-rN7">
                                 <frame key="frameInset" minX="292" minY="205" width="67" height="49"/>
@@ -60,11 +62,15 @@
                             <constraint firstAttribute="leadingMargin" secondItem="uKI-Q6-7WE" secondAttribute="leading" id="dTH-mL-I6u"/>
                             <constraint firstItem="5wM-x4-z53" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="iyv-bD-lUa"/>
                             <constraint firstItem="eGS-pG-6c8" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="199" id="k8e-2A-VAX"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="5wM-x4-z53" secondAttribute="bottom" constant="8" id="mAo-Am-Xoo"/>
                             <constraint firstItem="8ce-Xx-7m3" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="orL-0y-ftU"/>
                             <constraint firstItem="iks-6c-DqC" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="199" id="qqz-N2-9xI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Here" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="iks-6c-DqC" id="lv3-9C-3Fd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

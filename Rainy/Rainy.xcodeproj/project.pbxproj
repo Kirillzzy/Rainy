@@ -14,6 +14,8 @@
 		7B11FC471DB53A6900FA6122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B11FC461DB53A6900FA6122 /* Assets.xcassets */; };
 		7B11FC4A1DB53A6900FA6122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B11FC481DB53A6900FA6122 /* LaunchScreen.storyboard */; };
 		7B11FC541DB540E900FA6122 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11FC531DB540E900FA6122 /* WeatherForecast.swift */; };
+		7BDCE5CC1DBBB27A00167625 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE5CB1DBBB27A00167625 /* Constants.swift */; };
+		7BDCE5CE1DBBBFE100167625 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDCE5CD1DBBBFE100167625 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8C1C6795E2AFA6AA9F1CF7C5 /* Pods_Rainy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EA8E15D92D5168D0F28BAE /* Pods_Rainy.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		7B11FC491DB53A6900FA6122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B11FC4B1DB53A6900FA6122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B11FC531DB540E900FA6122 /* WeatherForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		7BDCE5CB1DBBB27A00167625 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7BDCE5CD1DBBBFE100167625 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Rainy-aldgivkqveeobkekmqalrgpntaib/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		8EBFC4D7F526D8ADA40CD634 /* Pods-Rainy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rainy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rainy/Pods-Rainy.release.xcconfig"; sourceTree = "<group>"; };
 		A34481B21E8E732C8A2F6650 /* Pods-Rainy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rainy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rainy/Pods-Rainy.debug.xcconfig"; sourceTree = "<group>"; };
 		F4EA8E15D92D5168D0F28BAE /* Pods_Rainy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rainy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDCE5CE1DBBBFE100167625 /* Alamofire.framework in Frameworks */,
 				8C1C6795E2AFA6AA9F1CF7C5 /* Pods_Rainy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +74,7 @@
 				7B11FC3F1DB53A6900FA6122 /* CurrentWeatherViewController.swift */,
 				7B11FC411DB53A6900FA6122 /* SecondViewController.swift */,
 				7B11FC531DB540E900FA6122 /* WeatherForecast.swift */,
+				7BDCE5CB1DBBB27A00167625 /* Constants.swift */,
 				7B11FC431DB53A6900FA6122 /* Main.storyboard */,
 				7B11FC461DB53A6900FA6122 /* Assets.xcassets */,
 				7B11FC481DB53A6900FA6122 /* LaunchScreen.storyboard */,
@@ -80,6 +86,7 @@
 		B73DFD47EE40CB8B2E89BD2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BDCE5CD1DBBBFE100167625 /* Alamofire.framework */,
 				F4EA8E15D92D5168D0F28BAE /* Pods_Rainy.framework */,
 			);
 			name = Frameworks;
@@ -218,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDCE5CC1DBBB27A00167625 /* Constants.swift in Sources */,
 				7B11FC421DB53A6900FA6122 /* SecondViewController.swift in Sources */,
 				7B11FC541DB540E900FA6122 /* WeatherForecast.swift in Sources */,
 				7B11FC3E1DB53A6900FA6122 /* AppDelegate.swift in Sources */,
