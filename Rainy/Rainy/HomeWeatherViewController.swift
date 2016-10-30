@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  Rainy
 //
 //  Created by Kirill Averyanov on 17/10/16.
@@ -7,28 +7,21 @@
 //
 
 import UIKit
-import CoreLocation
 import Alamofire
 import SwiftyJSON
 
+class HomeWeatherViewController: UIViewController {
 
-
-struct coords{
-    var lat: Double = 0
-    var lon: Double = 0
-}
-
-class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var imageWeatherView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
-    @IBOutlet weak var imageWeather: UIImageView!
     
-    private var locationManager: CLLocationManager!
+    private var cityName: String = "Saint Petersburg"
     private let constrain: Constants = Constants()
     private var currentForecast: WeatherForecast? {
         didSet{
@@ -56,56 +49,22 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
         "50d":#imageLiteral(resourceName: "50d"),
         "50n":#imageLiteral(resourceName: "50n")
     ]
-    
-    
-    private var myCoords: coords = coords()
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-        reloadLocationManager()
-    
-    }
-    
-    private func reloadLocationManager(){
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        myCoords.lat = locationManager.location!.coordinate.latitude
-        myCoords.lon = locationManager.location!.coordinate.longitude
         updateCurrentForecast()
     }
 
-    @IBAction func reloadButtonPressed(_ sender: AnyObject) {
-        reloadLocationManager()
+    
+    @IBAction func refreshButtonPressed(_ sender: Any) {
         reloadUI()
     }
     
-    
-    private func locationManager(manager: CLLocationManager,
-                         didFailWithError error: Error) {
-        print("error: ", error)
-    }
-    
-    private func locationManager(_ manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        print("HERERE ________________")
-        print(locations)
-        self.myCoords.lat = locations[locations.count - 1].coordinate.latitude
-        self.myCoords.lon = locations[locations.count - 1].coordinate.longitude
-        locationManager.stopUpdatingLocation()
-    }
-
-
     private func updateCurrentForecast(){
         Alamofire.request("http://api.openweathermap.org/data/2.5/weather",
-                          parameters: ["lat":myCoords.lat,
-                                       "lon": myCoords.lon,
+                          parameters: ["q": cityName,
                                        "APPID": constrain.apiKey,
                                        "units":"metric"])
             .responseJSON{response in
@@ -114,13 +73,13 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
                 }
                 let json = JSON(response.result.value!)
                 self.currentForecast = WeatherForecast(currentWeatherTempurature: json["main"]["temp"].double,
-                                                               timeStamp: self.getCurrentTime(),
-                                                               imageName: json["weather"][0]["icon"].string!,
-                                                               locationCoordinates: (self.myCoords.lat, self.myCoords.lon),
-                                                               humidity: json["main"]["humidity"].int,
-                                                               pressure: json["main"]["pressure"].int,
-                                                               wind: json["wind"]["speed"].double, cityName: json["name"].string,
-                                                               stateWeather: json["weather"][0]["description"].string)
+                                                       timeStamp: self.getCurrentTime(),
+                                                       imageName: json["weather"][0]["icon"].string!,
+                                                       locationCoordinates: (0, 0),
+                                                       humidity: json["main"]["humidity"].int,
+                                                       pressure: json["main"]["pressure"].int,
+                                                       wind: json["wind"]["speed"].double, cityName: json["name"].string,
+                                                       stateWeather: json["weather"][0]["description"].string)
         }
     }
     
@@ -140,7 +99,7 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
         currentTime = "\(hour):\(minute)"
         return currentTime
     }
-
+    
     private func reloadUI(){
         updateCurrentForecast()
         timeLabel.text = "Updated: \(currentForecast!.timeStamp)"
@@ -162,8 +121,10 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
         if let st = currentForecast?.stateWeather{
             stateLabel.text = st
         }
-        imageWeather.image = photoResources[(currentForecast?.imageName)!]
+        imageWeatherView.image = photoResources[(currentForecast?.imageName)!]
     }
-}
 
+
+
+}
 

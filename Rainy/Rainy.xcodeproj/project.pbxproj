@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		7B11FC3E1DB53A6900FA6122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11FC3D1DB53A6900FA6122 /* AppDelegate.swift */; };
 		7B11FC401DB53A6900FA6122 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11FC3F1DB53A6900FA6122 /* CurrentWeatherViewController.swift */; };
-		7B11FC421DB53A6900FA6122 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11FC411DB53A6900FA6122 /* SecondViewController.swift */; };
+		7B11FC421DB53A6900FA6122 /* HomeWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11FC411DB53A6900FA6122 /* HomeWeatherViewController.swift */; };
 		7B11FC451DB53A6900FA6122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B11FC431DB53A6900FA6122 /* Main.storyboard */; };
 		7B11FC471DB53A6900FA6122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B11FC461DB53A6900FA6122 /* Assets.xcassets */; };
 		7B11FC4A1DB53A6900FA6122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B11FC481DB53A6900FA6122 /* LaunchScreen.storyboard */; };
 		7B11FC541DB540E900FA6122 /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B11FC531DB540E900FA6122 /* WeatherForecast.swift */; };
+		7B1E7F5D1DC6049F003A2237 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B1E7F5C1DC6049F003A2237 /* CoreLocation.framework */; };
+		7B6469FB1DC643AE00AA44F2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6469FA1DC643AE00AA44F2 /* SettingsViewController.swift */; };
+		7B6889F11DC4F2400014AC1D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6889F01DC4F2400014AC1D /* SwiftyJSON.framework */; };
 		7BDCE5CC1DBBB27A00167625 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDCE5CB1DBBB27A00167625 /* Constants.swift */; };
 		7BDCE5CE1DBBBFE100167625 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BDCE5CD1DBBBFE100167625 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8C1C6795E2AFA6AA9F1CF7C5 /* Pods_Rainy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EA8E15D92D5168D0F28BAE /* Pods_Rainy.framework */; };
@@ -23,12 +26,16 @@
 		7B11FC3A1DB53A6900FA6122 /* Rainy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rainy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B11FC3D1DB53A6900FA6122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B11FC3F1DB53A6900FA6122 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
-		7B11FC411DB53A6900FA6122 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		7B11FC411DB53A6900FA6122 /* HomeWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherViewController.swift; sourceTree = "<group>"; };
 		7B11FC441DB53A6900FA6122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B11FC461DB53A6900FA6122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B11FC491DB53A6900FA6122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B11FC4B1DB53A6900FA6122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B11FC531DB540E900FA6122 /* WeatherForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
+		7B1E7F5C1DC6049F003A2237 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7B6469FA1DC643AE00AA44F2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7B6889EE1DC4F0AA0014AC1D /* SwiftOpenWeatherMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftOpenWeatherMapAPI.framework; path = "Pods/../build/Debug-iphoneos/SwiftOpenWeatherMapAPI/SwiftOpenWeatherMapAPI.framework"; sourceTree = "<group>"; };
+		7B6889F01DC4F2400014AC1D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Release-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		7BDCE5CB1DBBB27A00167625 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7BDCE5CD1DBBBFE100167625 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Rainy-aldgivkqveeobkekmqalrgpntaib/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		8EBFC4D7F526D8ADA40CD634 /* Pods-Rainy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rainy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rainy/Pods-Rainy.release.xcconfig"; sourceTree = "<group>"; };
@@ -41,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1E7F5D1DC6049F003A2237 /* CoreLocation.framework in Frameworks */,
+				7B6889F11DC4F2400014AC1D /* SwiftyJSON.framework in Frameworks */,
 				7BDCE5CE1DBBBFE100167625 /* Alamofire.framework in Frameworks */,
 				8C1C6795E2AFA6AA9F1CF7C5 /* Pods_Rainy.framework in Frameworks */,
 			);
@@ -72,7 +81,8 @@
 			children = (
 				7B11FC3D1DB53A6900FA6122 /* AppDelegate.swift */,
 				7B11FC3F1DB53A6900FA6122 /* CurrentWeatherViewController.swift */,
-				7B11FC411DB53A6900FA6122 /* SecondViewController.swift */,
+				7B11FC411DB53A6900FA6122 /* HomeWeatherViewController.swift */,
+				7B6469FA1DC643AE00AA44F2 /* SettingsViewController.swift */,
 				7B11FC531DB540E900FA6122 /* WeatherForecast.swift */,
 				7BDCE5CB1DBBB27A00167625 /* Constants.swift */,
 				7B11FC431DB53A6900FA6122 /* Main.storyboard */,
@@ -86,6 +96,9 @@
 		B73DFD47EE40CB8B2E89BD2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B1E7F5C1DC6049F003A2237 /* CoreLocation.framework */,
+				7B6889F01DC4F2400014AC1D /* SwiftyJSON.framework */,
+				7B6889EE1DC4F0AA0014AC1D /* SwiftOpenWeatherMapAPI.framework */,
 				7BDCE5CD1DBBBFE100167625 /* Alamofire.framework */,
 				F4EA8E15D92D5168D0F28BAE /* Pods_Rainy.framework */,
 			);
@@ -226,10 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BDCE5CC1DBBB27A00167625 /* Constants.swift in Sources */,
-				7B11FC421DB53A6900FA6122 /* SecondViewController.swift in Sources */,
+				7B11FC421DB53A6900FA6122 /* HomeWeatherViewController.swift in Sources */,
 				7B11FC541DB540E900FA6122 /* WeatherForecast.swift in Sources */,
 				7B11FC3E1DB53A6900FA6122 /* AppDelegate.swift in Sources */,
 				7B11FC401DB53A6900FA6122 /* CurrentWeatherViewController.swift in Sources */,
+				7B6469FB1DC643AE00AA44F2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +371,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftOpenWeatherMapAPI",
+					"$(PROJECT_DIR)/build/Release-iphoneos/SwiftyJSON",
+				);
 				INFOPLIST_FILE = Rainy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.Rainy;
@@ -372,6 +391,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KH2KDZEEE3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftOpenWeatherMapAPI",
+					"$(PROJECT_DIR)/build/Release-iphoneos/SwiftyJSON",
+				);
 				INFOPLIST_FILE = Rainy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kirillzzy.Rainy;
