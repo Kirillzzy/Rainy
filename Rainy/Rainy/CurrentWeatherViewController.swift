@@ -70,39 +70,34 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
         if(CLLocationManager.authorizationStatus() == .notDetermined){
             locationManager.requestWhenInUseAuthorization()
         }
+        
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
-        reloadLocationManager()
-    
-    }
-    
-    private func reloadLocationManager(){
-        if(CLLocationManager.authorizationStatus() == .notDetermined){
-            locationManager.requestWhenInUseAuthorization()
-        }
-        locationManager.startUpdatingLocation()
-        myCoords.lat = locationManager.location!.coordinate.latitude
-        myCoords.lon = locationManager.location!.coordinate.longitude
         updateCurrentForecast()
     }
 
     @IBAction func reloadButtonPressed(_ sender: AnyObject) {
-        reloadLocationManager()
+        if(CLLocationManager.authorizationStatus() == .notDetermined){
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.startUpdatingLocation()
+        }
+        updateCurrentForecast()
         reloadUI()
     }
     
     
-    private func locationManager(manager: CLLocationManager,
+    internal func locationManager(_ manager: CLLocationManager,
                          didFailWithError error: Error) {
         print("error: ", error)
     }
     
-    private func locationManager(_ manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        print("HERERE ________________")
-        print(locations)
-        self.myCoords.lat = locations[locations.count - 1].coordinate.latitude
-        self.myCoords.lon = locations[locations.count - 1].coordinate.longitude
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.myCoords.lat = locations[0].coordinate.latitude
+        self.myCoords.lon = locations[0].coordinate.longitude
         locationManager.stopUpdatingLocation()
     }
 
