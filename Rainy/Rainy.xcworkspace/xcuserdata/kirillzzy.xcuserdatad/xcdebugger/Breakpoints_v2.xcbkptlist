@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rainy/CurrentWeatherViewController.swift"
-            timestampString = "499527026.916065"
+            timestampString = "499593447.035038"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "locationManager(manager:didFailWithError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rainy/CurrentWeatherViewController.swift"
-            timestampString = "499527421.247613"
+            timestampString = "499593447.035038"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rainy/CurrentWeatherViewController.swift"
-            timestampString = "499527421.247613"
+            timestampString = "499593447.035038"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "updateCurrentForecast()"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,12 +88,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Rainy/CurrentWeatherViewController.swift"
-            timestampString = "499527421.247613"
+            timestampString = "499615151.605883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "reloadUI()"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "getCurrentTime()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

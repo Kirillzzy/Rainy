@@ -66,16 +66,21 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        if(CLLocationManager.authorizationStatus() == .notDetermined){
+            locationManager.requestWhenInUseAuthorization()
+        }
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.startUpdatingLocation()
+        }
         reloadLocationManager()
     
     }
     
     private func reloadLocationManager(){
-        locationManager.requestWhenInUseAuthorization()
+        if(CLLocationManager.authorizationStatus() == .notDetermined){
+            locationManager.requestWhenInUseAuthorization()
+        }
         locationManager.startUpdatingLocation()
         myCoords.lat = locationManager.location!.coordinate.latitude
         myCoords.lon = locationManager.location!.coordinate.longitude
@@ -121,6 +126,19 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
                                                                pressure: json["main"]["pressure"].int,
                                                                wind: json["wind"]["speed"].double, cityName: json["name"].string,
                                                                stateWeather: json["weather"][0]["description"].string)
+        }
+    }
+    
+    private func getTrafficInformation(){
+        print(myCoords.lat, myCoords.lon)
+        Alamofire.request("http://www.mapquestapi.com/traffic/v2/incidents",
+                          parameters: ["boundingBox": "\(myCoords.lat),\(myCoords.lon),\(myCoords.lat - 1),\(myCoords.lon - 1)",
+                                       "key": constrain.trafficApiKey])
+            .responseJSON{response in
+                guard response.result.isSuccess else{
+                    return
+                }
+                let json = JSON(response.result.value!)
         }
     }
     
