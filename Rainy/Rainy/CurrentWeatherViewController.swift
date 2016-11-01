@@ -22,8 +22,6 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var imageWeather: UIImageView!
@@ -37,24 +35,24 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
     }
     
     private let photoResources: [String: UIImage] = [
-        "01d":#imageLiteral(resourceName: "01d"),
-        "01n":#imageLiteral(resourceName: "01n"),
-        "02d":#imageLiteral(resourceName: "02d"),
-        "02n":#imageLiteral(resourceName: "02n"),
-        "03d":#imageLiteral(resourceName: "03d"),
-        "03n":#imageLiteral(resourceName: "03n"),
-        "04d":#imageLiteral(resourceName: "04d"),
-        "04n":#imageLiteral(resourceName: "04n"),
-        "09d":#imageLiteral(resourceName: "09d"),
-        "09n":#imageLiteral(resourceName: "09n"),
-        "10d":#imageLiteral(resourceName: "10d"),
-        "10n":#imageLiteral(resourceName: "10n"),
-        "11d":#imageLiteral(resourceName: "11d"),
-        "11n":#imageLiteral(resourceName: "11n"),
-        "13d":#imageLiteral(resourceName: "13d"),
-        "13n":#imageLiteral(resourceName: "13n"),
-        "50d":#imageLiteral(resourceName: "50d"),
-        "50n":#imageLiteral(resourceName: "50n")
+        "01d":#imageLiteral(resourceName: "sunny"),
+        "01n":#imageLiteral(resourceName: "moon"),
+        "02d":#imageLiteral(resourceName: "sunny_clouds"),
+        "02n":#imageLiteral(resourceName: "moodCloud"),
+        "03d":#imageLiteral(resourceName: "clouds"),
+        "03n":#imageLiteral(resourceName: "clouds"),
+        "04d":#imageLiteral(resourceName: "clouds"),
+        "04n":#imageLiteral(resourceName: "clouds"),
+        "09d":#imageLiteral(resourceName: "cloud_rain"),
+        "09n":#imageLiteral(resourceName: "cloud_rain"),
+        "10d":#imageLiteral(resourceName: "sunCloudRain"),
+        "10n":#imageLiteral(resourceName: "moonrain"),
+        "11d":#imageLiteral(resourceName: "storm"),
+        "11n":#imageLiteral(resourceName: "storm"),
+        "13d":#imageLiteral(resourceName: "CloudSnow"),
+        "13n":#imageLiteral(resourceName: "CloudSnow"),
+        "50d":#imageLiteral(resourceName: "fog"),
+        "50n":#imageLiteral(resourceName: "fog")
     ]
     
     
@@ -86,7 +84,6 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
             locationManager.startUpdatingLocation()
         }
         updateCurrentForecast()
-        reloadUI()
     }
     
     
@@ -133,7 +130,7 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
                 guard response.result.isSuccess else{
                     return
                 }
-                let json = JSON(response.result.value!)
+                _ = JSON(response.result.value!)
         }
     }
     
@@ -155,19 +152,12 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
     }
 
     private func reloadUI(){
-        updateCurrentForecast()
         timeLabel.text = "Updated: \(currentForecast!.timeStamp)"
         if let temp = currentForecast?.currentWeatherTempurature{
             temperatureLabel.text = "\(temp)℃"
         }
         if let city = currentForecast?.cityName{
             cityNameLabel.text = city
-        }
-        if let press = currentForecast?.pressure{
-            pressureLabel.text = "\(press)"
-        }
-        if let hum = currentForecast?.humidity{
-            humidityLabel.text = "\(hum)"
         }
         if let wi = currentForecast?.wind{
             windLabel.text = "\(wi)"
