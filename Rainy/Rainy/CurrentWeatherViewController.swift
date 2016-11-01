@@ -72,7 +72,9 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
         if CLLocationManager.locationServicesEnabled(){
             locationManager.startUpdatingLocation()
         }
-        updateCurrentForecast()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.updateCurrentForecast()
+        })
     }
 
     @IBAction func reloadButtonPressed(_ sender: AnyObject) {
@@ -110,13 +112,13 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
                     return
                 }
                 let json = JSON(response.result.value!)
-                self.currentForecast = WeatherForecast(currentWeatherTempurature: json["main"]["temp"].double,
+                self.currentForecast = WeatherForecast(currentWeatherTempurature: round(10 * json["main"]["temp"].doubleValue) / 10,
                                                                timeStamp: self.getCurrentTime(),
                                                                imageName: json["weather"][0]["icon"].string!,
                                                                locationCoordinates: (self.myCoords.lat, self.myCoords.lon),
                                                                humidity: json["main"]["humidity"].int,
                                                                pressure: json["main"]["pressure"].int,
-                                                               wind: json["wind"]["speed"].double, cityName: json["name"].string,
+                                                               wind: round(10 * json["wind"]["speed"].doubleValue) / 10, cityName: json["name"].string,
                                                                stateWeather: json["weather"][0]["description"].string)
         }
     }

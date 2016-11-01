@@ -18,8 +18,17 @@ class HomeWeatherViewController: UIViewController {
     @IBOutlet weak var imageWeatherView: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
     
-    
-    private var cityName: String = "Saint Petersburg"
+    private var setts = UserDefaults.standard
+    private var cityName: String{
+        get{
+            if let name = setts.value(forKey: "cityName"){
+                return name as! String
+            }
+            else{
+                return "Saint Petersburg"
+            }
+        }
+    }//"Saint Petersburg"
     private let constrain: Constants = Constants()
     private var currentForecast: WeatherForecast? {
         didSet{
@@ -71,13 +80,13 @@ class HomeWeatherViewController: UIViewController {
                     return
                 }
                 let json = JSON(response.result.value!)
-                self.currentForecast = WeatherForecast(currentWeatherTempurature: json["main"]["temp"].double,
+                self.currentForecast = WeatherForecast(currentWeatherTempurature: round(10 * json["main"]["temp"].doubleValue) / 10,
                                                        timeStamp: self.getCurrentTime(),
                                                        imageName: json["weather"][0]["icon"].string!,
                                                        locationCoordinates: (0, 0),
                                                        humidity: json["main"]["humidity"].int,
                                                        pressure: json["main"]["pressure"].int,
-                                                       wind: json["wind"]["speed"].double, cityName: json["name"].string,
+                                                       wind: round(10 * json["wind"]["speed"].doubleValue) / 10, cityName: json["name"].string,
                                                        stateWeather: json["weather"][0]["description"].string)
         }
     }
