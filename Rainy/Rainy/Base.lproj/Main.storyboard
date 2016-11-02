@@ -243,56 +243,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use Geolocation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MpX-Rs-eb1">
-                                <rect key="frame" x="16" y="38" width="160" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your home city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTs-Hr-TSb">
-                                <rect key="frame" x="16" y="96" width="160" height="21"/>
+                                <rect key="frame" x="16" y="49" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert Here" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mcb-TL-kxj">
-                                <rect key="frame" x="214" y="99" width="145" height="18"/>
-                                <color key="backgroundColor" red="0.83310199870000001" green="0.83310199870000001" blue="0.83310199870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-7M-oUP">
-                                <rect key="frame" x="310" y="33" width="51" height="31"/>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3l-ua-u1K">
-                                <rect key="frame" x="16" y="142" width="343" height="36"/>
+                                <rect key="frame" x="16" y="93" width="343" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="bqz-aQ-5cK" eventType="touchUpInside" id="3Re-aO-mTh"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert Here" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mcb-TL-kxj">
+                                <rect key="frame" x="214" y="53" width="145" height="24"/>
+                                <color key="backgroundColor" red="0.83310199870000001" green="0.83310199870000001" blue="0.83310199870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.83310199870000001" green="0.83310199870000001" blue="0.83310199870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Mcb-TL-kxj" secondAttribute="trailing" id="FOI-Kq-ycZ"/>
-                            <constraint firstItem="W3l-ua-u1K" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="122" id="Lbe-vx-kJh"/>
-                            <constraint firstItem="eT9-7M-oUP" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="13" id="ORn-z8-OXt"/>
+                            <constraint firstItem="Mcb-TL-kxj" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="33" id="PDX-Xh-xx2"/>
                             <constraint firstAttribute="leadingMargin" secondItem="fTs-Hr-TSb" secondAttribute="leading" id="W0v-qX-GAQ"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="MpX-Rs-eb1" secondAttribute="leading" id="WUx-nb-fgu"/>
+                            <constraint firstItem="W3l-ua-u1K" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="73" id="WUL-kr-h47"/>
                             <constraint firstAttribute="leadingMargin" secondItem="W3l-ua-u1K" secondAttribute="leading" id="bYO-6D-qBA"/>
-                            <constraint firstItem="fTs-Hr-TSb" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="76" id="cnk-02-PWA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eT9-7M-oUP" secondAttribute="trailing" id="eX4-BW-wrE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="W3l-ua-u1K" secondAttribute="trailing" id="ise-63-E57"/>
-                            <constraint firstItem="MpX-Rs-eb1" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="18" id="m2L-pz-sqp"/>
+                            <constraint firstItem="fTs-Hr-TSb" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="29" id="mPb-Hg-TOe"/>
                             <constraint firstItem="Mcb-TL-kxj" firstAttribute="leading" secondItem="d3t-kB-aLg" secondAttribute="leadingMargin" constant="198" id="nZ4-Qx-Xka"/>
-                            <constraint firstItem="Mcb-TL-kxj" firstAttribute="top" secondItem="rhG-5w-ghm" secondAttribute="bottom" constant="79" id="zkc-o1-6x9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="8BV-4s-rSV"/>
                     <connections>
-                        <outlet property="swifthLocation" destination="eT9-7M-oUP" id="w6y-0j-7WR"/>
                         <outlet property="textField" destination="Mcb-TL-kxj" id="5wd-Oc-MbB"/>
                     </connections>
                 </viewController>

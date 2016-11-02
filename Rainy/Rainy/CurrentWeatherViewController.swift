@@ -61,7 +61,6 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
@@ -124,7 +123,6 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
     }
     
     private func getTrafficInformation(){
-        print(myCoords.lat, myCoords.lon)
         Alamofire.request("http://www.mapquestapi.com/traffic/v2/incidents",
                           parameters: ["boundingBox": "\(myCoords.lat),\(myCoords.lon),\(myCoords.lat - 1),\(myCoords.lon - 1)",
                                        "key": constrain.trafficApiKey])
@@ -152,6 +150,8 @@ class CurrentWeatherViewController: UIViewController, CLLocationManagerDelegate 
         currentTime = "\(hour):\(minute)"
         return currentTime
     }
+    
+    
 
     private func reloadUI(){
         timeLabel.text = "Updated: \(currentForecast!.timeStamp)"
