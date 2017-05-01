@@ -7,7 +7,7 @@ App is showing the weather and using your location.
 - Shows the weather in the place where you are now
 - Shows the weather in your home town
 
-  TODO:
+TODO:
 - Add landscape mode
 - Add traffic level information
 
