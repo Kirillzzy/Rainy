@@ -10,8 +10,6 @@ Todo:
 - add landscape mode
 - add traffic level information
 
-![alt tag](https://github.com/Kirillzzy/Rainy/blob/master/here.png)
+![alt tag](https://github.com/Kirillzzy/Rainy/blob/master/Screens/screen1.jpg)
 
-![alt tag](https://github.com/Kirillzzy/Rainy/blob/master/home.png)
-
-![alt tag](https://github.com/Kirillzzy/Rainy/blob/master/settings.png)
+![alt tag](https://github.com/Kirillzzy/Rainy/blob/master/Screens/screen2.jpg)
