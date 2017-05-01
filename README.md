@@ -12,5 +12,4 @@ TODO:
 - Add traffic level information
 
 ![alt tag](https://github.com/Kirillzzy/Rainy/blob/master/Screens/screen1.jpg)
-
 ![alt tag](https://github.com/Kirillzzy/Rainy/blob/master/Screens/screen2.jpg)
